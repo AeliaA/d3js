@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SVG</title>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	
+	<script>
+	var svg = d3.select('body').append('svg');
+
+	var w = 1200;
+	var h = 800;
+
+	svg.attr('width', w)
+		.attr('height', h);
+
+	var dataset = [10, 15, 20, 25, 30, 25, 20, 15, 10];
+
+	var circles = svg.selectAll('circle')
+		.data(dataset)
+		.enter()
+		.append('circle');
+
+	circles.attr('cx', function(d, i){
+			return (i * 60) + 400;
+	})
+	.attr('cy', h/2)
+	.attr('r', function(d){
+		return d;
+	})
+	</script>
+	
+</body>
+</html>

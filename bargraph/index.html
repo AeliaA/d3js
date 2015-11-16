@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bar Graph</title>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1>Maui Population Decline</h1>
+	<script>
+	var dataset = [140, 80, 75, 69, 111, 55];
+	d3.select('body').selectAll('div')
+		.data(dataset)
+		.enter()
+		.append('div')
+		.attr('class', 'bar')
+
+		//inline styling overides styling og ht in stylesheet
+		.style('height', function(d){
+				return d + 'px';
+		})
+
+	</script>
+	
+</body>
+</html>
